@@ -1,3 +1,4 @@
+"use strict";
 var LinkedListNode = /** @class */ (function () {
     function LinkedListNode(data) {
         this._data = data;
@@ -61,16 +62,17 @@ var LinkedList = /** @class */ (function () {
         }
         return false;
     };
-    LinkedList.prototype.push = function (node) {
+    LinkedList.prototype.push = function (value) {
+        var newNode = new LinkedListNode(value);
         if (this.isEmpty) {
-            this._start = node;
+            this._start = newNode;
             return;
         }
         var currentNode = this._start;
         while (currentNode.next !== null) {
             currentNode = currentNode.next;
         }
-        currentNode.next = node;
+        currentNode.next = newNode;
     };
     LinkedList.prototype.pop = function () {
         if (this.isEmpty) {
@@ -103,11 +105,11 @@ var LinkedList = /** @class */ (function () {
     return LinkedList;
 }());
 var list = new LinkedList();
-list.push(new LinkedListNode("Василий"));
-list.push(new LinkedListNode("Шурик"));
-list.push(new LinkedListNode("Андруфа"));
+list.push("Василий");
+list.push("Шурик");
+list.push("Андруфа");
 console.log(list.contains("asdas"));
-// list.log();
+list.log();
 // console.log("_____________________________");
 // list.pop();
 // list.log();

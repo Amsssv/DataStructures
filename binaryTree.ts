@@ -75,7 +75,7 @@ class BinaryTree {
     remove(value: number) {
         this.root = removeValue(this.root, value);
 
-        function findMinNode(node: BinaryTreeNode) {
+        function findMinNode(node: BinaryTreeNode): BinaryTreeNode {
             return node.left === null? node : findMinNode(node.left)
         }
 

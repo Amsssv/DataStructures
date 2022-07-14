@@ -1,3 +1,4 @@
+"use strict";
 var BinaryTreeNode = /** @class */ (function () {
     function BinaryTreeNode(data) {
         this._data = data;

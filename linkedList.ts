@@ -67,9 +67,12 @@ class LinkedList {
         return false;
     }
 
-    push(node: LinkedListNode) {
+    push(value: any) {
+
+        let newNode = new LinkedListNode(value)
+
         if (this.isEmpty) {
-            this._start = node;
+            this._start = newNode;
             return;
         }
 
@@ -79,7 +82,7 @@ class LinkedList {
             currentNode = currentNode.next;
         }
 
-        currentNode.next = node;
+        currentNode.next = newNode;
     }
 
     pop() {
@@ -120,11 +123,11 @@ class LinkedList {
 }
 
 const list = new LinkedList();
-list.push(new LinkedListNode("Василий"));
-list.push(new LinkedListNode("Шурик"));
-list.push(new LinkedListNode("Андруфа"));
+list.push("Василий");
+list.push("Шурик");
+list.push("Андруфа");
 console.log(list.contains("asdas"));
-// list.log();
+list.log();
 // console.log("_____________________________");
 // list.pop();
 // list.log();
